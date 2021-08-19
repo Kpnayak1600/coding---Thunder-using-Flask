@@ -1,0 +1,65 @@
+    
+{% extends "layout.html" %}
+{% block body %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('static/assets/img/home-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Admin Panel</h1>
+                            <span class="subheading">Manage your posts and change them</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+              
+               
+                    <h1>Basic Actions</h1>
+                    <a href="/dashboard"><button class="btn btn-primary text-uppercase" >Dashboard Home</button></a>
+                    <a href="/logout"><button class="btn btn-primary text-uppercase" >Logout</button></a>
+                    <hr>
+                <h1>Add/Edit Posts</h1>
+                <form action="/edit/{{sno}}" method="POST" novalidate>
+                    <div class="form-floating">
+                        <input class="form-control" id="title" name = "title" type="text" placeholder="Title" value="{{post.title}}" />
+                        <label for="inputName">Title</label>
+                    </div>
+                    <div class="form-floating">
+                        <input class="form-control" id="tline" name = "tline" type="text" placeholder="Tagline" value="{{post.tagline}}"/>
+                        <label for="inputEmail">Tagline</label>
+                    </div>
+                    <div class="form-floating">
+                        <input class="form-control" id="slug" name = "slug" type="text" placeholder="slug" value="{{post.slug}}"/>
+                        <label for="inputPhone">Slug</label>
+                    </div>
+                    <div class="form-floating">
+                        <textarea class="form-control" id="content" name ="content" placeholder="Content" style="height: 12rem" >{{post.content}}</textarea>
+                        <label for="inputMessage">Content</label>
+                    </div>
+                    
+                    <div class="form-floating">
+                        <input class="form-control" id="img_file" name ="img_file" placeholder="image file name" value="{{post.img_file}} "></input>
+                        <label for="inputMessage">Image File</label>
+                    </div>
+                    <br />
+                    <button class="btn btn-primary text-uppercase" type="submit">Submit</button>
+                </form>
+
+                        
+
+
+                
+
+
+                      
+
+
+        {% endblock %}
+        
+  

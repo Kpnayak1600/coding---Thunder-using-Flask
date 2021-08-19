@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block body %}
+
+        <!-- Page Header-->
+        <!-- {% set fname = 'img/' + post.img_file %}
+        <header class="masthead" style="background-image: url('static/filename=fname')"> -->
+
+            {% set fname = 'img/' + post.img_file %}
+           
+            <header class="masthead" style="background-image: url('/static/assets/img/about-bg.jpg')">  
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>{{post.title}}</h1>
+                            <h2 class="subheading">{{post.tagline}}</h2>
+                            <span class="meta">
+                                Posted by
+                                <a href="#!">Admin</a>
+                                on {{post.date}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                       {{post.content}}
+                       
+                    </div>
+                </div>
+            </div>
+        </article>
+
+
+
+
+      
+
+
+
+
+ <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="my-5">
+            <h4>Send your experience</h4>
+        <form action="/post/{{post.slug}}" method="POST">
+            <div class="form-group col-lg-6 col-md-12 name">
+                <input class="form-control" id="inputName" name = "name" type="text" placeholder="Enter your name..." 
+                  onfocus="this.placeholder = ''" onblur="this.placeholder='Enter your name'"/>
+                <label for="inputName"></label>
+            </div>
+            <div class="form-group col-lg-6 col-md-12 name">
+                <input class="form-control" id="inputEmail" name = "email" type="email" placeholder="Enter your email..."
+                onfocus="this.placeholder = ''" onblur="this.placeholder='Enter your name'"/>
+                <label for="inputEmail"></label>
+            </div>
+            <div class="form-group col-lg-6 col-md-12 name">
+                <input class="form-control" id="title" name = "title" type="text" placeholder="Enter the blog name"
+                onfocus="this.placeholder = ''" onblur="this.placeholder='Enter the blog name'"/>
+                <label for="inputtile"></label>
+            </div>
+      
+            
+            <div class="form-floating">
+                <textarea class="form-control" id="inputMessage" name ="message" placeholder="Enter your message here..." style="height: 12rem"></textarea>
+                <label for="inputMessage">Comment</label>
+            </div>
+            <button class="primary-btn text-uppercase" type="submit">SUBMIT</button>
+        </form>
+        </div>
+    
+</div>
+</div>
+</div>
+</main>
+        {% endblock %}
