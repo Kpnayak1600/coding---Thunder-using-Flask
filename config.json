@@ -18,8 +18,8 @@
         "about_text": " Hi ,my name is kundan prem nayak and I create a programming tutorial !",
         "no_of_posts": 2,
         "login_image": "login.png",
-        "admin_user" : "kundan",
-        "admin_password" : "1600",
+        "admin_user" : "username",
+        "admin_password" : "password",
         "upload_location":  "D:\\flask concept\\blog using flask\\static\\assets\\img2 from app"
     }
 }
